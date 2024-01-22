@@ -1,0 +1,63 @@
+:root {
+--faq-white: hsl(0, 0%, 100%);
+--faq-pink: hsl(275, 100%, 97%);
+--faq-grayish-purple: hsl(292, 16%, 49%);
+--faqdark-purple: hsl(292, 42%, 14%);
+--faqdark-purple-opacity: hsla(292, 42%, 14%, 0.1);
+}
+
+body {
+    background-color: var(--faq-pink);
+}
+
+main {
+    background-color: white;
+    border-radius: 16px;
+    width: 600px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.accordion {
+    background-color: var(--faq-white);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-color: var(--faqdark-purple-opacity);
+    border-width: thin;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    font-weight: 900;
+  }
+  
+  .accordion:hover {
+    color: hsl(285, 100%, 40%);
+  }
+  
+  .first-btn {
+    border-top: none;
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+footer
+{
+    position:absolute;
+    bottom: 0;
+    height: 30px;
+}
+
