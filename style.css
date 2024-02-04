@@ -6,23 +6,52 @@
 --faqdark-purple-opacity: hsla(292, 42%, 14%, 0.1);
 }
 
+@font-face {
+  font-family: ItalicVariableFont;
+  src: url(./assets/fonts/static/WorkSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: WorkSansRegular;
+  src: url(./assets/fonts/static/WorkSans-Regular.ttf);
+}
+
 body {
     background-color: var(--faq-pink);
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    background-size: 100%;
 }
 
 main {
     background-color: white;
     border-radius: 16px;
-    width: 600px;
+    width: 540px;
     padding: 20px;
-    margin: 200px auto 0 auto;
+    margin: 260px auto 0 auto;
     left: 50%;
 }
+.stair-icon {
+  padding-right: 20px;
+}
+.title {
+  font-size: 50px;
+  font-family: ItalicVariableFont;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 
-.accordion {
+/* .accordion-icon {
+  display: inline;
+} */
+
+button.accordion {
     background-color: var(--faq-white);
     cursor: pointer;
-    padding: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     width: 100%;
     border-left: none;
     border-right: none;
@@ -33,9 +62,15 @@ main {
     outline: none;
     font-size: 16px;
     transition: 0.4s;
-    font-weight: 900;
+    background-image: url(./assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-position:100% 50%;
+    padding-left: 0px;
+    font-family: ItalicVariableFont;
+    color: var(--faqdark-purple)
   }
   
+  }
   .accordion:hover {
     color: hsl(285, 100%, 40%);
   }
@@ -45,17 +80,36 @@ main {
   }
 
   .panel {
-    padding: 0 18px;
+    padding-top: 0 30px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    color: var(--faq-grayish-purple);
+    font-family: WorkSansRegular;
+    line-height: 1.5;
   }
 
 footer
 {
-    position:absolute;
-    bottom: 0;
-    height: 30px;
+  padding-top: 40px;
+  position: sticky;
 }
 
+@media screen and (max-width: 600px)
+{
+
+  body {
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+    background-size: 100%;
+  }
+
+  main {
+    margin: 96px auto 0 auto;
+    width: 320px;
+  }
+
+  button.accordion {
+    text-wrap: balance;
+  }
+}
